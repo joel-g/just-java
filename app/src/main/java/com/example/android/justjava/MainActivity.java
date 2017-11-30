@@ -15,6 +15,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    public void increment() {
+        int quantity = 3;
+        display(quantity);
+    }
+
+    public void decrement() {
+        int quantity = 1;
+        display(quantity);
+    }
+
+
     public void submitOrder(View view) {
         int numberOfCoffees = 5;
         display(numberOfCoffees);

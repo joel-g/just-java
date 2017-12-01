@@ -12,7 +12,7 @@
         android:orientation="vertical"
         android:padding="8dp"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="39dp">
+        tools:layout_editor_absoluteY="39dp" >
 
         <TextView
             android:layout_width="wrap_content"

@@ -12,7 +12,7 @@
         android:orientation="vertical"
         android:padding="8dp"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="39dp" >
+        tools:layout_editor_absoluteY="39dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -24,7 +24,7 @@
             android:textSize="16sp" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 

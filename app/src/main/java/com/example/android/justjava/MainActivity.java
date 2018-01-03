@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submitOrder(View view) {
-        String priceMessage = "Total: $" + (quantity * 5) + "\nThank you!";
+        int price = calculatePrice();
+        String priceMessage = "Total: $" + price + "\nThank you!";
         displayMessage(priceMessage);
     }
 
@@ -47,6 +48,11 @@ public class MainActivity extends AppCompatActivity {
     private void displayMessage(String message) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(message);
+    }
+
+    private int calculatePrice() {
+        int price = quantity * 5;
+        return price;
     }
 
 }

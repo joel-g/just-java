@@ -51,8 +51,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private int calculatePrice() {
-        int price = quantity * 5;
-        return price;
+        return quantity * 5;
     }
 
     private String createOrderSummary(int price) {

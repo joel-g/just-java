@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void submitOrder(View view) {
         int price = calculatePrice();
-        String priceMessage = "Total: $" + price + "\nThank you!";
+        String priceMessage = createOrderSummary(price);
         displayMessage(priceMessage);
     }
 
@@ -55,4 +55,8 @@ public class MainActivity extends AppCompatActivity {
         return price;
     }
 
+    private String createOrderSummary(int price) {
+        String message = "Name: Joel Guerra\nQuantity: " + quantity + "\nTotal: $" + price + "\nThank you!";
+        return message;
+    }
 }

@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     int quantity = 0;
     boolean hasWhippedCream = false;
+    boolean hasChocolate = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +34,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submitOrder(View view) {
-        CheckBox whippedCream = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
-        hasWhippedCream = whippedCream.isChecked();
+        CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
+        hasWhippedCream = whippedCreamCheckBox.isChecked();
+        CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
+        hasChocolate = chocolateCheckBox.isChecked();
         int price = calculatePrice();
         String priceMessage = createOrderSummary(price);
         displayMessage(priceMessage);
@@ -62,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
     private String createOrderSummary(int price) {
         String message = "Name: Joel Guerra\n" +
                 "Add whipped cream? " + hasWhippedCream + "\n" +
+                "Add chocolate? " + hasChocolate + "\n" +
                 "Quantity: " + quantity + "\n" +
                 "Total: $" + price + "\n" +
                 "Thank you!";

@@ -21,15 +21,16 @@
             android:text="toppings"
             android:textAllCaps="true"
             android:textColor="#867979"
-            android:textSize="16sp" />pac
+            android:textSize="16sp" />
 
         <CheckBox
-            android:id="@+id/checkBox"
+            android:id="@+id/whipped_cream_checkbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Whipped cream"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="0dp" />
+            android:paddingLeft="24dp"
+            android:layout_marginBottom="16dp"
+            android:textSize="16sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -43,7 +44,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
 
             <Button
                 android:layout_width="48dp"
@@ -87,6 +89,7 @@
             android:textSize="16sp" />
 
         <Button
+            android:layout_marginTop="16dp"
             android:id="@+id/order_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

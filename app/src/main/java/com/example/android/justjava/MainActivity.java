@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 import java.text.NumberFormat;
 
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
         hasChocolate = chocolateCheckBox.isChecked();
         int price = calculatePrice();
-        TextView nameField = (TextView) findViewById(R.id.name_field);
+        TextView nameField = (EditText) findViewById(R.id.name_field);
         name = nameField.getText().toString();
         String priceMessage = createOrderSummary(price);
         displayMessage(priceMessage);
@@ -62,7 +63,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private int calculatePrice() {
-        return quantity * 5;
+        int price = 5;
+        if (hasChocolate) {
+            price += 2;
+        }
+        if (hasWhippedCream) {
+            price += 1;
+        }
+        return quantity * price;
     }
 
     private String createOrderSummary(int price) {

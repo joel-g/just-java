@@ -7,12 +7,14 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.text.NumberFormat;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    int quantity = 0;
+    int quantity = 1;
     boolean hasWhippedCream = false;
     boolean hasChocolate = false;
     String name = "";
@@ -24,15 +26,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void increment(View view) {
-        quantity = quantity + 1;
-        displayQuantity(quantity);
+        if (quantity < 100) {
+            quantity += 1;
+            displayQuantity(quantity);
+        } else {
+            Toast.makeText(this, "Maximum order is 100 cups of coffee.",
+                    Toast.LENGTH_LONG).show();
+        }
     }
 
     public void decrement(View view) {
-        if (quantity > 0) {
+        if (quantity > 1) {
             quantity = quantity - 1;
+            displayQuantity(quantity);
+        } else {
+            Toast.makeText(this, "Must order at least 1 coffee.",
+                    Toast.LENGTH_LONG).show();
         }
-        displayQuantity(quantity);
+
     }
 
     public void submitOrder(View view) {

@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     int quantity = 0;
     boolean hasWhippedCream = false;
     boolean hasChocolate = false;
+    String name = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
         CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
         hasChocolate = chocolateCheckBox.isChecked();
         int price = calculatePrice();
+        TextView nameField = (TextView) findViewById(R.id.name_field);
+        name = nameField.getText().toString();
         String priceMessage = createOrderSummary(price);
         displayMessage(priceMessage);
     }
@@ -63,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String createOrderSummary(int price) {
-        String message = "Name: Joel Guerra\n" +
+        String message = "Name: " + name + "\n" +
                 "Add whipped cream? " + hasWhippedCream + "\n" +
                 "Add chocolate? " + hasChocolate + "\n" +
                 "Quantity: " + quantity + "\n" +

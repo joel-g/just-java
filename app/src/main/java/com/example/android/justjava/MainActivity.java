@@ -75,16 +75,6 @@ public class MainActivity extends AppCompatActivity {
         quantityTextView.setText("" + numberOfCoffees);
     }
 
-    private void displayPrice(int price) {
-        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
-        orderSummaryTextView.setText(NumberFormat.getCurrencyInstance().format(price));
-    }
-
-    private void displayMessage(String message) {
-        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
-        orderSummaryTextView.setText(message);
-    }
-
     private int calculatePrice() {
         int price = 5;
         if (hasChocolate) {

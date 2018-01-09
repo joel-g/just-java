@@ -1,8 +1,9 @@
 package com.example.android.justjava;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -55,7 +56,18 @@ public class MainActivity extends AppCompatActivity {
         TextView nameField = (EditText) findViewById(R.id.name_field);
         name = nameField.getText().toString();
         String priceMessage = createOrderSummary(price);
-        displayMessage(priceMessage);
+        sendEmail(priceMessage);
+    }
+
+    public void sendEmail(String message) {
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:"));
+        intent.putExtra(Intent.EXTRA_EMAIL, "example@gmail.com");
+        intent.putExtra(Intent.EXTRA_SUBJECT, "JustJava Order for " + name);
+        intent.putExtra(Intent.EXTRA_TEXT, message);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        }
     }
 
     private void displayQuantity(int numberOfCoffees) {

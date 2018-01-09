@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="toppings"
+                android:text="@string/toppings"
                 android:textAllCaps="true"
                 android:textColor="#867979"
                 android:textSize="16sp" />
@@ -40,7 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="24dp"
-                android:text="Whipped cream"
+                android:text="@string/whippedCream"
                 android:textSize="16sp" />
 
             <CheckBox
@@ -49,14 +49,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:paddingLeft="24dp"
-                android:text="Chocolate"
+                android:text="@string/chocolate"
                 android:textSize="16sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:text="quantity"
+                android:text="@string/quantity"
                 android:textAllCaps="true"
                 android:textColor="#867979"
                 android:textSize="16sp" />
@@ -89,14 +89,14 @@
                     android:text='-' />
 
             </LinearLayout>
-            
+
             <Button
                 android:id="@+id/order_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:onClick="submitOrder"
-                android:text="Order" />
+                android:text="@string/order" />
 
 
         </LinearLayout>

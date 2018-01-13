@@ -87,12 +87,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String createOrderSummary(int price) {
-        String message = "Name: " + name + "\n" +
+        String message = getString(R.string.name) + ": " + name + "\n" +
                 "Add whipped cream? " + hasWhippedCream + "\n" +
                 "Add chocolate? " + hasChocolate + "\n" +
-                "Quantity: " + quantity + "\n" +
+                getString(R.string.quantity) + ": " + quantity + "\n" +
                 "Total: $" + price + "\n" +
-                "Thank you!";
+                getString(R.string.thankYou);
         return message;
     }
 }
